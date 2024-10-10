@@ -4,10 +4,22 @@ export type TArticle = {
   title: string;
 };
 
+export type TCategory = {
+  id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type TCategoriesResponse = {
+  code: number;
+  data: [TCategory];
+};
+
 export type TArticlesResponse = {
   code: number;
   data: {
-    data: TArticle[];
+    data: [TArticle];
     metadata: {
       page: number;
       limit: number;

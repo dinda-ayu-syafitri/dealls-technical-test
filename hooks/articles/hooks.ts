@@ -1,6 +1,6 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { getAllArticles } from "./request";
-import { TArticlesResponse } from "./articlesType";
+import { getAllArticles, getCategories } from "./request";
+import { TArticlesResponse, TCategoriesResponse } from "./articlesType";
 
 export const useGetAllArticle = (
   search: string,
@@ -13,4 +13,10 @@ export const useGetAllArticle = (
     queryKey: ["get-all-articles", search, category_id, limit, page, sort],
     queryFn: async () =>
       await getAllArticles(search, category_id, limit, page, sort),
+  });
+
+export const useGetCategory = (): UseQueryResult<TCategoriesResponse> =>
+  useQuery({
+    queryKey: ["get-all-category"],
+    queryFn: async () => await getCategories(),
   });
