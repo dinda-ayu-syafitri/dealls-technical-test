@@ -13,11 +13,11 @@ export const HomeModules = () => {
 
   return (
     <div className="w-full h-full min-h-screen">
-      <div className="grid grid-cols-4 gap-4 w-full">
-        <div className="col-span-3  w-full h-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+        <div className="md:col-span-3  w-full h-auto">
           <ArticleCarousel />
           <div className="my-5">
-            <Tabs aria-label="Pills" variant="pills">
+            <Tabs aria-label="Pills" variant="pills" className="justify-center">
               {category?.data.map((category) => (
                 <Tabs.Item key={category.id} title={category.name}>
                   <ArticlesPerCategory category_id={category.id} />
@@ -27,7 +27,7 @@ export const HomeModules = () => {
           </div>
         </div>
 
-        <div className="col-span-1 w-full h-auto">
+        <div className="md:col-span-1 w-full h-auto">
           <CategoryList />
         </div>
       </div>

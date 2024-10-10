@@ -11,7 +11,7 @@ export const ArticleCategoryModul = () => {
 
   return (
     <div className="w-full h-full">
-      <h2 className="text-3xl font-bold my-5">{category}</h2>
+      <h2 className="text-3xl font-bold my-2 md:my-5">{category}</h2>
       <hr />
       <ArticlesPerCategory category_id={categoryId} />
     </div>

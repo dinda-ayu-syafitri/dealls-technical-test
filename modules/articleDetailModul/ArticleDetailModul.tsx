@@ -13,14 +13,17 @@ export const ArticleDetailModul = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="grid grid-cols-4 gap-4 w-full">
-        <div className="col-span-3 w-full h-full">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+        <div className="md:col-span-3 w-full h-full ">
           {articleDetail?.data ? (
             <>
-              <h1 className="text-xl md:text-3xl font-bold">
-                {articleDetail.data.title}
-              </h1>
-              <DateFormatter dateString={articleDetail.data.created_at} />
+              <div className="mb-2 md:mb-5">
+                <h1 className="text-xl md:text-3xl font-bold">
+                  {articleDetail.data.title}
+                </h1>
+                <DateFormatter dateString={articleDetail.data.created_at} />
+              </div>
+
               <div
                 dangerouslySetInnerHTML={{
                   __html: articleDetail.data.content ?? "",
@@ -31,7 +34,7 @@ export const ArticleDetailModul = () => {
             <h1>Article Not Found</h1>
           )}
         </div>
-        <div className="col-span-1 w-full h-full">
+        <div className="md:col-span-1 w-full h-full">
           <CategoryList />
         </div>
       </div>

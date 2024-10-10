@@ -25,7 +25,7 @@ export const ArticlesPerCategory: FC<{ category_id: number }> = ({
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="grid grid-cols-3 gap-5 my-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-2 md:my-5">
         {data?.data.data ? (
           data.data.data.map((article) => (
             <ArticleCard key={article.id} id={article.id} />
