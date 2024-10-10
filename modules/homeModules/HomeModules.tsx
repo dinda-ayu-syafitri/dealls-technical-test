@@ -1,9 +1,10 @@
 "use client";
 import { ArticleCard } from "@/components/articleCard/ArticleCard";
 import { ArticleCarousel } from "@/components/articleCarousel/ArticleCarousel";
+import { ArticlesPerCategory } from "@/components/articlesPerCategory/ArticlesPerCategory";
 import { CategoryList } from "@/components/categoryList/CategoryList";
 import { useGetAllArticle, useGetCategory } from "@/hooks/articles/hooks";
-import { Button } from "flowbite-react";
+import { Button, Tabs } from "flowbite-react";
 import Link from "next/link";
 
 export const HomeModules = () => {
@@ -15,10 +16,14 @@ export const HomeModules = () => {
       <div className="grid grid-cols-4 gap-4 w-full">
         <div className="col-span-3  w-full h-auto">
           <ArticleCarousel />
-          <div className="grid grid-cols-3 gap-5 my-5">
-            {data?.data.data.map((article) => (
-              <ArticleCard key={article.id} id={article.id} />
-            ))}
+          <div className="my-5">
+            <Tabs aria-label="Pills" variant="pills">
+              {category?.data.map((category) => (
+                <Tabs.Item key={category.id} title={category.name}>
+                  <ArticlesPerCategory category_id={category.id} />
+                </Tabs.Item>
+              ))}
+            </Tabs>
           </div>
         </div>
 
