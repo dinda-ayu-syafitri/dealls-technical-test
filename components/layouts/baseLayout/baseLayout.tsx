@@ -8,7 +8,7 @@ export const BaseLayout: FC<TBaseLayoutProps> = ({
   return (
     <div className="w-full h-full min-h-screen">
       <Navbar />
-      <section className="pt-24 w-full h-full">{children}</section>
+      <section className="pt-32 w-full h-full px-[10%]">{children}</section>
     </div>
   );
 };
