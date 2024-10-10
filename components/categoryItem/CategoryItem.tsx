@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { FC } from "react";
 
 export const CategoryItem: FC<{ category_id: number }> = ({ category_id }) => {
-  const { data } = useGetAllArticle("", category_id, 3, 1, "asc");
+  const { data } = useGetAllArticle("", category_id, 5, 1, "asc");
 
   return (
     <div>
