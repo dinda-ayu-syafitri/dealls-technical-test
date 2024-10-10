@@ -1,9 +1,12 @@
-import { BaseLayout } from "@/components/layouts/baseLayout";
+import { BaseLayout } from "@/components/layouts/baseLayout/baseLayout";
+import { HomeModules } from "@/modules/homeModules/HomeModules";
 
 export default function Home() {
   return (
     <div>
-      <BaseLayout></BaseLayout>
+      <BaseLayout>
+        <HomeModules />
+      </BaseLayout>
     </div>
   );
 }
