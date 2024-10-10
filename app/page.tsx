@@ -3,7 +3,7 @@ import { HomeModules } from "@/modules/homeModules/HomeModules";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full">
       <BaseLayout>
         <HomeModules />
       </BaseLayout>

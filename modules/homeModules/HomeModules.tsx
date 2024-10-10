@@ -1,5 +1,18 @@
+import { ArticleCarousel } from "@/components/articleCarousel/ArticleCarousel";
 import React from "react";
 
 export const HomeModules = () => {
-  return <div>HomeModules</div>;
+  return (
+    <div className="px-20 w-full h-full min-h-screen bg-red-300">
+      <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="col-span-3 bg-slate-400 w-full h-auto">
+          <ArticleCarousel />
+        </div>
+
+        <div className="col-span-1 bg-red-400 w-full h-auto">
+          <p>Category Section</p>
+        </div>
+      </div>
+    </div>
+  );
 };

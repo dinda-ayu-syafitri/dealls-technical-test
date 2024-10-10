@@ -6,9 +6,9 @@ export const BaseLayout: FC<TBaseLayoutProps> = ({
   children,
 }): ReactElement => {
   return (
-    <div>
+    <div className="w-full h-full min-h-screen">
       <Navbar />
-      <section className="pt-24">{children}</section>
+      <section className="pt-24 w-full h-full">{children}</section>
     </div>
   );
 };

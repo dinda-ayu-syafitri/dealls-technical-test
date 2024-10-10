@@ -13,7 +13,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="fixed bg-white w-full py-3 px-5 md:px-[10%] flex items-center justify-between shadow-lg md:min-h-24">
+    <div className="fixed z-50 bg-white w-full py-3 px-5 md:px-[10%] flex items-center justify-between shadow-lg md:min-h-24">
       <div>
         <a href="/">
           <p className="font-bold md:text-2xl text-md">Dealls Article Portal</p>
