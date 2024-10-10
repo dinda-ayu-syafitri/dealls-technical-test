@@ -1,16 +1,12 @@
 "use client";
 import { ArticleCarousel } from "@/components/articleCarousel/ArticleCarousel";
-import {
-  useGetAllArticle,
-  useGetArticleDetail,
-  useGetCategory,
-} from "@/hooks/articles/hooks";
-import React from "react";
+import { useGetAllArticle, useGetCategory } from "@/hooks/articles/hooks";
+import { Button } from "flowbite-react";
+import Link from "next/link";
 
 export const HomeModules = () => {
   const { data } = useGetAllArticle("", 1, 10, 1, "asc");
   const { data: category } = useGetCategory();
-  const { data: articleDetail } = useGetArticleDetail("133");
 
   return (
     <div className="px-20 w-full h-full min-h-screen bg-red-300">
@@ -33,7 +29,12 @@ export const HomeModules = () => {
 
       <div>
         {data?.data.data.map((article) => (
-          <p key={article.id}>{article.title}</p>
+          <div key={article.id}>
+            <p key={article.id}>{article.title}</p>
+            <Link href={`article/${article.slug}/${article.id}`}>
+              <Button> {article.slug}</Button>
+            </Link>
+          </div>
         ))}
       </div>
       <div>{/* <p>{articleDetail?.data.content}</p> */}</div>
