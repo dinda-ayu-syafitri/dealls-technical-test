@@ -13,7 +13,9 @@ export const CategoryList = () => {
           <h3 className="text-lg font-bold">{category.name}</h3>
           <CategoryItem category_id={category.id} key={category.id} />
           <Link href={`article/categories/${category.name}/${category.id}`}>
-            <span className="text-sm">See More</span>
+            <span className="text-sm text-blue-500 hover:underline">
+              See More
+            </span>
           </Link>
         </div>
       ))}
