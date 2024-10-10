@@ -2,7 +2,9 @@ import { useGetAllArticle } from "@/hooks/articles/hooks";
 import Link from "next/link";
 import React, { FC } from "react";
 
-export const CategoryItem: FC<{ category_id: number }> = ({ category_id }) => {
+export const CategoryItem: FC<{
+  category_id: number;
+}> = ({ category_id }) => {
   const { data } = useGetAllArticle("", category_id, 5, 1, "asc");
 
   return (
@@ -14,7 +16,6 @@ export const CategoryItem: FC<{ category_id: number }> = ({ category_id }) => {
           </div>
         </Link>
       ))}
-      <span className="text-sm">See More</span>
     </div>
   );
 };

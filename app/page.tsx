@@ -4,7 +4,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Dealls Article Portal",
-  description: "Dealls Article Portal Desc",
+  description:
+    "Dealls article portal, where you can find all the articles about jobs and career",
 };
 
 export default function Home() {
