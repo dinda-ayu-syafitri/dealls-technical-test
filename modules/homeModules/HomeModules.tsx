@@ -1,4 +1,5 @@
 "use client";
+import { ArticleCard } from "@/components/articleCard/ArticleCard";
 import { ArticleCarousel } from "@/components/articleCarousel/ArticleCarousel";
 import { CategoryList } from "@/components/categoryList/CategoryList";
 import { useGetAllArticle, useGetCategory } from "@/hooks/articles/hooks";
@@ -14,14 +15,9 @@ export const HomeModules = () => {
       <div className="grid grid-cols-4 gap-4 w-full">
         <div className="col-span-3  w-full h-auto">
           <ArticleCarousel />
-          <div>
+          <div className="grid grid-cols-3 gap-5 my-5">
             {data?.data.data.map((article) => (
-              <div key={article.id}>
-                <p key={article.id}>{article.title}</p>
-                <Link href={`article/${article.slug}/${article.id}`}>
-                  <Button> {article.slug}</Button>
-                </Link>
-              </div>
+              <ArticleCard key={article.id} id={article.id} />
             ))}
           </div>
         </div>
