@@ -53,17 +53,17 @@ export const ArticleCard: FC<{ id: string }> = ({ id }) => {
 
               <div className="flex gap-2">
                 <WhatsappShare
-                  url={`/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
+                  url={`${url}/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
                   borderRadius={10}
                   size={25}
                 />
                 <TwitterShare
-                  url={`/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
+                  url={`${url}/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
                   borderRadius={10}
                   size={25}
                 />
                 <EmailShare
-                  url={`/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
+                  url={`${url}/article/${articleDetail.data.slug}/${articleDetail.data.id}`}
                   borderRadius={10}
                   size={25}
                 />
