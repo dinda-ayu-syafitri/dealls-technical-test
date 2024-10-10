@@ -20,7 +20,7 @@ export const Navbar = () => {
         </a>
       </div>
       <div className="hidden md:flex justify-around gap-10 text-md">
-        {[{ path: "", label: "home" }].map((link, index) => (
+        {[{ path: "", label: "Home" }].map((link, index) => (
           <div key={index}>
             <a
               href={`${`/${link.path}`}`}
@@ -46,7 +46,7 @@ export const Navbar = () => {
       </div>
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden flex flex-col items-center">
-          {[{ path: "", label: "home" }].map((link, index) => (
+          {[{ path: "", label: "Home" }].map((link, index) => (
             <a
               key={index}
               href={`${`/${link.path}`}`}

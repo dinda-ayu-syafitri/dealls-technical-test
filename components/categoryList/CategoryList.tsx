@@ -7,7 +7,8 @@ export const CategoryList = () => {
   const { data: categories } = useGetCategory();
 
   return (
-    <div className="p-5 border rounded-lg">
+    <div className="p-2 md:p-5 border rounded-lg">
+      <h2 className="text-xl font-bold">Articles by Category</h2>
       {categories?.data.map((category: TCategory) => (
         <div key={category.id} className="p-3 border-b">
           <h3 className="text-lg font-bold">{category.name}</h3>
