@@ -1,5 +1,9 @@
 import { api } from "@/config/APIConfig";
-import { TArticlesResponse, TCategoriesResponse } from "./articlesType";
+import {
+  TArticleDetailResponse,
+  TArticlesResponse,
+  TCategoriesResponse,
+} from "./articlesType";
 
 export const getAllArticles = async (
   search: string,
@@ -21,6 +25,19 @@ export const getAllArticles = async (
       sort,
     },
     url: "/v1/articles",
+  });
+  return data;
+};
+
+export const getArticleDetail = async (
+  id: string
+): Promise<TArticleDetailResponse> => {
+  const { data } = await api({
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    url: "/v1/articles/" + id,
   });
   return data;
 };

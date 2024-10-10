@@ -1,11 +1,16 @@
 "use client";
 import { ArticleCarousel } from "@/components/articleCarousel/ArticleCarousel";
-import { useGetAllArticle, useGetCategory } from "@/hooks/articles/hooks";
+import {
+  useGetAllArticle,
+  useGetArticleDetail,
+  useGetCategory,
+} from "@/hooks/articles/hooks";
 import React from "react";
 
 export const HomeModules = () => {
   const { data } = useGetAllArticle("", 1, 10, 1, "asc");
   const { data: category } = useGetCategory();
+  const { data: articleDetail } = useGetArticleDetail("133");
 
   return (
     <div className="px-20 w-full h-full min-h-screen bg-red-300">
@@ -31,6 +36,7 @@ export const HomeModules = () => {
           <p key={article.id}>{article.title}</p>
         ))}
       </div>
+      <div>{/* <p>{articleDetail?.data.content}</p> */}</div>
     </div>
   );
 };

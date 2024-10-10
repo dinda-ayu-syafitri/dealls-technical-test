@@ -11,6 +11,16 @@ export type TCategory = {
   updated_at: string;
 };
 
+export type TArticleDetail = {
+  id: string;
+  title: string;
+  slug: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+  categories: [TCategory];
+};
+
 export type TCategoriesResponse = {
   code: number;
   data: [TCategory];
@@ -28,4 +38,9 @@ export type TArticlesResponse = {
       has_next_page: boolean;
     };
   };
+};
+
+export type TArticleDetailResponse = {
+  code: number;
+  data: TArticleDetail;
 };
